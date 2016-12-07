@@ -332,7 +332,7 @@ dgnest_vi_mode() {
       ;;
     esac
     echo -n "${MODE_INDICATOR}"
-    echo -n "%{$reset_color%} "
+    echo -n "%{$reset_color%}"
   fi
 }
 
