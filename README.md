@@ -1,4 +1,4 @@
-![DGNEST](.img/preview.png)
+![DGNEST](img/preview.png)
 
 # DGNEST oh-my-zsh theme
 
