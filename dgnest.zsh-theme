@@ -2,7 +2,7 @@ NEWLINE='
 '
 
 # PROMPT
-DGNEST_PROMPT_SYMBOL="${DGNEST_PROMPT_SYMBOL:-~>}"
+DGNEST_PROMPT_SYMBOL="${DGNEST_PROMPT_SYMBOL:-•••}"
 DGNEST_PROMPT_ADD_NEWLINE="${DGNEST_PROMPT_ADD_NEWLINE:-true}"
 DGNEST_PROMPT_SEPARATE_LINE="${DGNEST_PROMPT_SEPARATE_LINE:-true}"
 DGNEST_PROMPT_TRUNC="${DGNEST_PROMPT_TRUNC:-3}"
@@ -368,16 +368,18 @@ VIRTUAL_ENV_DISABLE_PROMPT=true
 
 # Compose PROMPT
 PROMPT=''
+
 # Top Prompt.
 [[ $DGNEST_PROMPT_ADD_NEWLINE == true ]] && PROMPT="$PROMPT$NEWLINE"
 PROMPT="$PROMPT"'$(dgnest_build_top_prompt) '
+
 # Medium Prompt.
 [[ $DGNEST_PROMPT_ADD_NEWLINE == true ]] && PROMPT="$PROMPT$NEWLINE"
-PROMPT="$PROMPT"'$(dgnest_build_prompt) '
+[[ $DGNEST_VI_MODE_SHOW == true ]] && PROMPT="$PROMPT"'$(dgnest_vi_mode)'
+PROMPT="$PROMPT "'$(dgnest_build_prompt) '
 
 # Prompt.
 [[ $DGNEST_PROMPT_SEPARATE_LINE == true ]] && PROMPT="$PROMPT$NEWLINE"
-[[ $DGNEST_VI_MODE_SHOW == true ]] && PROMPT="$PROMPT"'$(dgnest_vi_mode)'
 PROMPT="$PROMPT"'$(dgnest_return_status) '
 
 # Set PS2 - continuation interactive prompt
