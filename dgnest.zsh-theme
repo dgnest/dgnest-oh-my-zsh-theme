@@ -340,7 +340,8 @@ dgnest_vi_mode() {
 # Pain $PROMPT_SYMBOL in red if previous command was fail and
 # pain in green if all OK.
 dgnest_return_status() {
-  echo -n "%(?.%{$fg[green]%}.%{$fg[red]%})"
+  #echo -n "%(?.%{$fg[green]%}.%{$fg[red]%})"
+  echo -n "%(?.%{$fg[magenta]%}.%{$fg[red]%})"
   echo -n "%B${DGNEST_PROMPT_SYMBOL}%b"
   echo    "%{$reset_color%}"
 }
